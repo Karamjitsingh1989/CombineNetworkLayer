@@ -12,6 +12,9 @@ let package = Package(
         .library(
             name: "CombineNetwork",
             targets: ["CombineNetwork"]),
+        .library(
+            name: "Core",
+            targets: ["CombineNetwork"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
