@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 public struct NetworkRequest {
    
@@ -13,13 +14,13 @@ public struct NetworkRequest {
     let headers: [String: String]?
     let body: Data?
     let requestTimeOut: Float?
-    let httpMethod: HTTPMethod
+    let httpMethod: HTTPMethods
     
     public init(url: String,
                 headers: [String: String]? = nil,
                 reqBody: Encodable? = nil,
                 reqTimeout: Float? = nil,
-                httpMethod: HTTPMethod
+                httpMethod: HTTPMethods
     ) {
         self.url = url
         self.headers = headers
@@ -32,7 +33,7 @@ public struct NetworkRequest {
                 headers: [String: String]? = nil,
                 reqBody: Data? = nil,
                 reqTimeout: Float? = nil,
-                httpMethod: HTTPMethod
+                httpMethod: HTTPMethods
     ) {
         self.url = url
         self.headers = headers
