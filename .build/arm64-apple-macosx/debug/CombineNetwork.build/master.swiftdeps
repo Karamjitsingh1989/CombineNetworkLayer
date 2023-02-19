@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "14216f35b81cec2593b6d2aed25f12244f33e96abd5cb7ac3dc760d0c923f654"
+build_start_time: [1676813321, 129920005]
+build_end_time: [1676813321, 441216945]
+inputs:
+  "/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/Sources/CombineNetwork/CombineNetwork.swift": [1676811085, 717536449]

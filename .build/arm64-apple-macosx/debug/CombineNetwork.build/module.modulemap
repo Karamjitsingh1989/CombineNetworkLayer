@@ -1,0 +1,4 @@
+module CombineNetwork {
+    header "/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.build/CombineNetwork-Swift.h"
+    requires objc
+}

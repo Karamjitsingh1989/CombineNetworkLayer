@@ -23,6 +23,9 @@ let package = Package(
         .target(
             name: "CombineNetwork",
             dependencies: []),
+        .target(
+            name: "Core",
+            dependencies: []),
         .testTarget(
             name: "CombineNetworkTests",
             dependencies: ["CombineNetwork"]),

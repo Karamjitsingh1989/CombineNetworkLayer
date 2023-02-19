@@ -13,5 +13,5 @@ public protocol RequestProtocol {
     
     var requestTimeOut: Float { get }
     
-    func request<T: Codable>(_ request: NetworkRequest) -> AnyPublisher<T, Error>
+    func request<T: Codable>(_ request: NetworkRequest) -> AnyPublisher<T, NetworkError>
 }

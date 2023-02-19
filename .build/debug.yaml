@@ -1,0 +1,80 @@
+client:
+  name: basic
+tools: {}
+targets:
+  "CombineNetwork-debug.module": ["<CombineNetwork-debug.module>"]
+  "CombineNetworkPackageTests-debug.test": ["<CombineNetworkPackageTests-debug.test>"]
+  "CombineNetworkTests-debug.module": ["<CombineNetworkTests-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<CombineNetwork-debug.module>"]
+  "test": ["<CombineNetwork-debug.module>","<CombineNetworkPackageTests-debug.test>","<CombineNetworkTests-debug.module>"]
+default: "main"
+nodes:
+  "/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/Sources/CombineNetwork/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/Tests/CombineNetworkTests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "<CombineNetwork-debug.module>":
+    tool: phony
+    inputs: ["/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.build/CombineNetwork.swift.o","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.swiftmodule"]
+    outputs: ["<CombineNetwork-debug.module>"]
+
+  "<CombineNetworkPackageTests-debug.test>":
+    tool: phony
+    inputs: ["/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetworkPackageTests.xctest/Contents/MacOS/CombineNetworkPackageTests"]
+    outputs: ["<CombineNetworkPackageTests-debug.test>"]
+
+  "<CombineNetworkTests-debug.module>":
+    tool: phony
+    inputs: ["/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetworkTests.build/CombineNetworkTests.swift.o","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetworkTests.swiftmodule"]
+    outputs: ["<CombineNetworkTests-debug.module>"]
+
+  "C.CombineNetwork-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/Sources/CombineNetwork/CombineNetwork.swift"]
+    outputs: ["/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.build/CombineNetwork.swift.o","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "CombineNetwork"
+    module-output-path: "/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.swiftmodule"
+    import-paths: ["/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug"]
+    temps-path: "/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.build"
+    objects: ["/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.build/CombineNetwork.swift.o"]
+    other-args: ["-target","arm64-apple-macosx10.13","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-g","-j10","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.build/CombineNetwork-Swift.h","-color-diagnostics","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib"]
+    sources: ["/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/Sources/CombineNetwork/CombineNetwork.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 10
+
+  "C.CombineNetworkPackageTests-debug.test":
+    tool: shell
+    inputs: ["/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.build/CombineNetwork.swift.o","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetworkTests.build/CombineNetworkTests.swift.o"]
+    outputs: ["/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetworkPackageTests.xctest/Contents/MacOS/CombineNetworkPackageTests"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/CombineNetworkPackageTests.xctest/Contents/MacOS/CombineNetworkPackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug","-o","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetworkPackageTests.xctest/Contents/MacOS/CombineNetworkPackageTests","-module-name","CombineNetworkPackageTests","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetworkPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.5/macosx","-target","arm64-apple-macosx11.0","-Xlinker","-add_ast_path","-Xlinker","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetworkTests.swiftmodule","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"]
+
+  "C.CombineNetworkTests-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/Tests/CombineNetworkTests/CombineNetworkTests.swift","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.swiftmodule"]
+    outputs: ["/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetworkTests.build/CombineNetworkTests.swift.o","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetworkTests.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "CombineNetworkTests"
+    module-output-path: "/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetworkTests.swiftmodule"
+    import-paths: ["/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug"]
+    temps-path: "/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetworkTests.build"
+    objects: ["/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetworkTests.build/CombineNetworkTests.swift.o"]
+    other-args: ["-target","arm64-apple-macosx11.0","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-g","-j10","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-color-diagnostics","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib"]
+    sources: ["/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/Tests/CombineNetworkTests/CombineNetworkTests.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 10
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/Sources/CombineNetwork/","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/Tests/CombineNetworkTests/","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/Package.swift","/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

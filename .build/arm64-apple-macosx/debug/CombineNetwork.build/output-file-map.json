@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.build/master.swiftdeps"
+  },
+  "/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/Sources/CombineNetwork/CombineNetwork.swift": {
+    "dependencies": "/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.build/CombineNetwork.d",
+    "object": "/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.build/CombineNetwork.swift.o",
+    "swiftmodule": "/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.build/CombineNetwork~partial.swiftmodule",
+    "swift-dependencies": "/Users/harsimrat/Documents/CombineFramework/CombineNetworkLayer/.build/arm64-apple-macosx/debug/CombineNetwork.build/CombineNetwork.swiftdeps"
+  }
+}
